@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "smart_home",
+    "slug": "smart_home",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "smart_home"
+}
