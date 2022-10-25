@@ -90,8 +90,8 @@ export default function DeviceSettings() {
 
       let response = await fetch(url, requestOptions);
       if (requestType != "DELETE") {
-        let jsonData = response.json();
-        return jsonData;
+        let jsonData = await response.json();
+        return jsonData.results;
       }
 
     } catch (e) {
@@ -109,7 +109,6 @@ export default function DeviceSettings() {
       const listOfSensors = allResponses[1]
       setDevices(listOfDevices)
       setSensors(listOfSensors)
-      console.log(listOfSensors);
       setLoading(false)
     }).catch(error => console.log("Error on DevieSettings on fetchAll", error))
 

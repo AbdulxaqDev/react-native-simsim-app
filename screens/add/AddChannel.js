@@ -74,8 +74,8 @@ export default function AddChannels() {
       };
 
       let response = await fetch(`${BaseUrl}/api/${data}/`, requestOptions);
-      let jsonData = response.json();
-      return jsonData;
+      let jsonData = await response.json();
+      return jsonData.results;
     } catch (e) {
       console.log(`Error on getting ${data} List from Asyn storage (Devices screen): `, e);
     }
@@ -130,7 +130,8 @@ export default function AddChannels() {
       getToken().then((token) => {
         postAll(token, 'channel')
         setDevice("")
-        setChannelName("")
+       setChannelName("")
+       dataUpdater();
       }).catch(error => {
         Alert.alert(
           `${error}`,

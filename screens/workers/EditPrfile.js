@@ -82,7 +82,7 @@ export default function EditProfile({ route }) {
       };
 
       let response = await fetch(`${BaseUrl}/api/${data}/${id}/`, requestOptions);
-      let jsonData = response.json();
+      let jsonData = await response.json();
       return jsonData;
     } catch (e) {
       console.log(`Error on getting ${data} List from Asyn storage (Devices screen): `, e);

@@ -104,6 +104,8 @@ export default function Channels({
 
    const message = new Paho.Message("status");
 
+   console.log(`${homeName}${homeKey}/${deviceName}/status`);
+
    message.destinationName = `${homeName}${homeKey}/${deviceName}/status`;
 
    client.send(message);

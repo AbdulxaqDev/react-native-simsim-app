@@ -56,7 +56,7 @@ export default function More() {
    };
 
    let response = await fetch(`${BaseUrl}/api/${data}/`, requestOptions);
-   let jsonData = response.json();
+   let jsonData = await response.json();
    return jsonData;
   } catch (e) {
    console.log(

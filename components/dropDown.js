@@ -44,7 +44,7 @@ export default function HomeDrops({
                 showOption && (
                     <View style={style.wrapper} >
                         <ScrollView showsVerticalScrollIndicator={true} >
-                            {listOfItems.map((item, i) => {
+          {listOfItems.map((item, i) => {
                                 return (
                                     <TouchableOpacity
                                         key={item.id}

@@ -86,8 +86,8 @@ export default function DeviceSettings() {
       let url = requestType == "PUT" || requestType == "DELETE" ? `${BaseUrl}/api/${data}/${id}/` : `${BaseUrl}/api/${data}/`;
 
       let response = await fetch(url, requestOptions);
-      let jsonData = response.json();
-      return jsonData;
+      let jsonData = await response.json();
+      return jsonData.results;
 
     } catch (e) {
       console.log(`Error on getting ${data} List from Asyn storage (Devices screen): `, e);

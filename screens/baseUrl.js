@@ -1,5 +1,3 @@
-
-const BaseUrl = "http://simsimdevices.uz"
-
+const BaseUrl = "http://api.simsimdevices.uz";
 
 export default BaseUrl;

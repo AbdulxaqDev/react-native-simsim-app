@@ -172,8 +172,8 @@ export default function Devices({ navigation }) {
    };
 
    let response = await fetch(`${BaseUrl}/api/${data}/`, requestOptions);
-   let jsonData = response.json();
-   return jsonData;
+   let jsonData = await response.json();
+   return jsonData.results;
   } catch (e) {
    console.log(
     `Error on getting ${data} List from Asyn storage (Devices screen): `,

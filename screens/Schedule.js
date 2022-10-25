@@ -16,9 +16,6 @@ import BaseUrl from './baseUrl';
 import { useDispatch, useSelector } from 'react-redux';
 import { devicesActions } from '../store/devicesSlice';
 
-
-
-
 import Btn from '../components/Btn';
 import DropDown from '../components/dropDown';
 
@@ -172,8 +169,8 @@ export default function Schedule() {
       };
 
       let response = await fetch(`${BaseUrl}/api/${data}/`, requestOptions);
-      let jsonData = response.json();
-      return jsonData;
+      let jsonData = await response.json();
+      return jsonData.results;
     } catch (e) {
       console.log(`Error on getting ${data} List from Asyn storage (Devices screen): `, e);
     }
@@ -189,7 +186,8 @@ export default function Schedule() {
       const listOfDevices = allResponses[0]
       const listOfChannels = allResponses[1]
       const listOfSensors = allResponses[2]
-      setDevices(listOfDevices)
+    console.log(listOfDevices);
+    setDevices(listOfDevices)
       setChannelsList(listOfChannels)
       setSensors(listOfSensors)
       setLoading(false)
